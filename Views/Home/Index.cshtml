@@ -1,0 +1,39 @@
+﻿@model List<Pokemon>
+
+@{
+    ViewData["Title"] = "Home";
+}
+@section Estilos{
+    <link rel="stylesheet" href="~/css/styleIndex.css" asp-append-version="true">
+}
+<header class="flex">
+    <a href="@Url.Action("index","home")" class="flex dTitulo">
+        <img src="~/img/pokedexIcon.png" class="pokedexIcon">
+        <h1>Pokédex</h1>
+    </a>
+    <div class="dBuscar flex">
+        <form asp-controller="Home" asp-action="Buscar" class="formBuscar flex">
+            <img src="~/img/busqueda.png" alt="" class="iconBuscar">
+            <input type="search" name="IDoNombre" id="buscar" class="inputBuscar" placeholder="Search">
+            <input type="submit" class="btnEnviar" value="Buscar">
+        </form>
+    </div>
+    <div>
+        <input type="submit" value="#" class="ordenar">
+    </div>
+</header>
+<main class="flex" id="main">
+    @foreach(var pokemon in Model)
+    {
+        <a href="@Url.Action("DatosPokemon","Home", new {IDoNombre = pokemon.Id})" class="aCard">
+            <div class="cuerpo">
+                <p class="nPokemon">#@pokemon.Id</p>
+                <img src="@pokemon.Url" class="imgPokemon">
+                <p class="nombrePokemon">@pokemon.Name</p>
+            </div>
+        </a>
+    }
+</main>
+@section Scrips{
+    <script src="~/js/ScriptBusqueda.js"></script>
+}

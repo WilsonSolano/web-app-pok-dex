@@ -1,0 +1,107 @@
+﻿@model Pokemon
+@{
+    ViewData["Title"] = "Datos Pokemon";
+}
+@section Estilos{
+    <link rel="stylesheet" href="~/css/styleDatos.css" asp-append-version="true">
+}
+<header>
+    <div class="dTitulo flex">
+        <div class="dRegresar flex">
+            <a href="@Url.Action("Index","Home")">
+                <input type="submit" value="" class="regresar">
+            </a>
+            <h1 class="titulo">@Model.Name</h1>
+        </div>
+        <p class="nPokemon">#@Model.Id</p>
+        <img src="~/img/pokedexIcon.png" class="iconPokeball">
+    </div>
+</header>
+<main class="flex">
+    <div class="dImgTipos">
+        <div class="flex dImgPokemon">
+            <a href="@Url.Action("DatosPokemon","Home", new {IDoNombre = Model.Id == 1 ? Model.Id : Model.Id-1})"><img src="~/img/izquierda.png" class="flechas izq"></a>
+            <img src="@Model.Url" alt="" class="imgPokemon">
+            <a href="@Url.Action("DatosPokemon","Home", new {IDoNombre = Model.Id == 1302 ? Model.Id : Model.Id+1})"><img src="~/img/derecha.png" class="flechas dere"></a>
+        </div>
+        <div class="tipos flex">
+            @foreach(var types in Model.Tipos)
+            {
+                <p class="tipoPokemon">@types</p>
+            }
+        </div>
+        <p class="sobre">Sobre</p>
+    </div>
+    <div class="dSobre flex">
+        <div class="flex grid">
+            <div class="flex dImgTxt">
+                <img src="~/img/peso.png" class="iconosSobre">
+                <p>@Model.Peso kg</p>
+            </div>
+            <p class="tSobre">Peso</p>
+        </div>
+        <hr>
+        <div class="flex grid">
+            <div class="flex dImgTxt">
+                <img src="~/img/altura.png" class="iconosSobre">
+                <p>@Model.Altura m</p>
+            </div>
+            <p class="tSobre">Altura</p>
+        </div>
+        <hr>
+        <div class="grid">
+            <div class="dMovimientos">
+                @foreach(var moves in Model.Movimientos)
+                {
+                    <p class="tMovimientos">@moves</p>
+                }
+            </div>
+            <p class="tSobre">Movimientos</p>
+        </div>
+    </div>
+        <div class="dStats flex">
+            <div class="dTextStat flex">
+                <p class="sobre">Estadisticas Base</p>
+            </div>
+            <div>
+                <ul>
+                    <li>HP</li>
+                    <li>ATK</li>
+                    <li>DEF</li>
+                    <li>SATK</li>
+                    <li>SDEF</li>
+                    <li>SPD</li>
+                </ul>
+            </div>
+            <hr class="hrMeter">
+            <div>
+                <div class="flex dMeter">
+                    <p class="tMeter">@Model.Hp</p>
+                    <meter min="0" value="@Model.Hp" max="255"></meter>
+                </div>
+                <div class="flex dMeter">
+                    <p class="tMeter">@Model.Atk</p>
+                    <meter min="0" value="@Model.Atk" max="255"></meter>
+                </div>
+                <div class="flex dMeter">
+                    <p class="tMeter">@Model.Def</p>
+                    <meter min="0" value="@Model.Def" max="255"></meter>
+                </div>
+                <div class="flex dMeter">
+                    <p class="tMeter">@Model.Satk</p>
+                    <meter min="0" value="@Model.Satk" max="255"></meter>
+                </div>
+                <div class="flex dMeter">
+                    <p class="tMeter">@Model.Sdef</p>
+                    <meter min="0" value="@Model.Sdef" max="255"></meter>
+                </div>
+                <div class="flex dMeter">
+                    <p class="tMeter">@Model.Spd</p>
+                    <meter min="0" value="@Model.Spd" max="255"></meter>
+                </div>
+            </div>
+        </div>
+</main>
+@section Scrips{
+    <script src="~/js/ScriptManipulacionElementos.js"></script>
+}

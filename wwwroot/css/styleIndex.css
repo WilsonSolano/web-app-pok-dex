@@ -1,0 +1,227 @@
+body{
+    background-color: #DC0A2D;
+    font-family: 'Poppins', sans-serif;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+a {
+    text-decoration: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.aHeader{
+    width: 50%;
+}
+/*Header*/
+header {
+    margin: 8px 26px 28px 32px;
+}
+h1{
+    font-size: 60px;
+    color: white;
+    margin: 0px;
+}
+.pokedexIcon{
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+}
+.dTitulo{
+    column-gap: 30px;
+    align-items: center;
+    margin: 0px;
+    height: 100px;
+}
+.dBuscar{
+    background-color: white;
+    margin: 0px;
+    border-radius: 50px;
+    width: 80%;
+    height: 52px;
+    border-color: transparent;
+    align-items: center;
+}
+.inputBuscar{   
+    border-radius: 50px;
+    flex-grow: 1;
+    height: 42px;
+    border-color: transparent;
+    font-size: 18px;
+    padding: 0px 20px 0px 15px;
+}
+.inputBuscar:focus {
+    outline: none;
+}
+.iconBuscar{
+    width: 22px;
+    height: 22px;
+    margin: 0px 0px 0px 20px;
+}
+.btnEnviar{
+    padding: 15px;
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    margin-right: 15px;
+    font-size:18px;
+}
+.btnEnviar:hover{
+    background-color: #DC0A2D;
+    border-radius: 50%;
+    color: #ffffff;
+}
+.ordenar{
+    height: 52px;
+    width: 52px;
+    font-size: 35px;
+    border-radius: 50%;
+    border-color: transparent;
+    margin: 0px 0px 0px 38%;
+    color: #DC0A2D;
+}
+
+.formBuscar{
+    flex-grow: 1;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    justify-content: space-around;
+}
+.noEncontrado{
+    color: black;
+}
+/*Main*/
+main {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    justify-content: space-evenly;
+}
+.cuerpo {
+    width: 204px;
+    height: 208px;
+    border-radius: 10px;
+    background: #f8dbdb;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    margin: 10px 10px 10px 10px;
+}
+.nPokemon {
+    grid-row: 1 / 2;
+    width: 93%;
+    margin:  5px 10px 0px 0px;
+    text-align: end;
+}
+.imgPokemon {
+    width: 148px;
+    height: 148px;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: center;
+}
+.nombrePokemon {
+    grid-row: 3 / 4;
+    margin: 0px;
+    text-align: center;
+}
+.aCard{
+    color:black;
+}
+.flechaRegresar{
+    width:64px;
+    height:64px;
+}
+.dFlechaRegresar{
+    align-items:center;
+    gap:10px;
+}
+
+@media (max-width: 750px) {
+    h1{
+        font-size: 48px;
+    }
+    .pokedexIcon{
+        width: 48px;
+        height: 48px;
+    }    
+    .dBuscar{
+        width: 80%;
+        height: 52px;
+    }
+    .inputBuscar{
+        width: 8%; 
+        height: 42px;
+        font-size: 16px;
+        padding: 0px 15px 0px 15px;
+    }
+    .iconBuscar{
+        width: 18px;
+        height: 18px;
+        margin: 0px 0px 0px 15px;
+    }
+    .cuerpo {
+        width: 154px;
+        height: 158px;
+        margin: 10px 0px 10px 0px;
+    }
+    .nPokemon {
+        font-size: 12px;
+    }
+    
+    .imgPokemon {
+        width: 68px;
+        height: 68px;
+    }
+    .nombrePokemon {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+    .formBuscar{
+        width: 80%;
+        margin: 0px;
+        padding: 0px;
+    }
+    .btnEnviar{
+        margin-right: 0px;
+        font-size:15px;
+    }
+}
+@media (max-width: 365px){
+    h1 {
+        font-size: 38px;
+    }
+    .pokedexIcon {
+        width: 38px;
+        height: 38px;
+    }    
+    .inputBuscar{   
+        flex-grow: 1;
+    }
+    .iconBuscar{
+        width: 18px;
+        height: 18px;
+        margin: 0px 0px 0px 10px;
+    }
+    .cuerpo {
+        width: 144px;
+        height: 148px;
+        margin: 10px 0px 10px 0px;
+    }
+    .nPokemon {
+        font-size: 12px;
+    }
+    
+    .imgPokemon {
+        width: 68px;
+        height: 68px;
+    }
+    .nombrePokemon {
+        margin-top: 5px;
+        font-size: 16px;
+    }
+}

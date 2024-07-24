@@ -1,0 +1,269 @@
+:root {
+    --color: #74CB48;
+}
+
+body{
+    background-color: var(--color);
+    font-family: 'Poppins', sans-serif;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+header{
+    margin: 0px;
+}
+.dTitulo{
+    justify-content: space-between ;
+    align-items: center;
+    margin: 0px;
+    padding: 20px 20px 24px 20px;
+}
+.dRegresar{
+    align-items: center;
+}
+.regresar{
+    padding: 10px 20px 10px 40px;
+    background-image: url(../img/regresarIco.png);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 45px 45px;
+    background-color: transparent;
+    height: 60px;
+    width: 56px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 350ms ease-out;
+    margin: 0px;
+}
+.regresar:hover{
+    border: 2px solid whitesmoke;
+}
+.titulo{
+    margin: 0px 0px 0px 10px;
+    color: #FFFFFF;
+}
+.nPokemon{
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+.iconPokeball{
+    width: 400px;
+    height: 400px;
+    opacity: 0.3;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    z-index: -1;
+}
+
+main{
+    justify-content: center;
+    background-image: linear-gradient(to bottom, transparent 28%, #FFFFFF 28%);
+    border-radius: 12px;
+}
+.dImgTipos{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    height: fit-content;
+}
+.dImgPokemon{
+    align-items: center;
+}
+.imgPokemon{
+    grid-row: 1 / 2;
+    width: 350px;
+    height: 350px;
+}
+.flechas{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+.flechas:hover{
+    transform: scale(0.8);
+}
+.izq{
+    margin: 0px 20vw 0px 0px;
+}
+.dere{
+    margin: 0px 0px 0px 20vw;    
+}
+.tipos{
+    grid-row: 2 / 3;
+    margin: 0px;
+    height:fit-content;
+}
+.tipos > p{
+    padding: 5px 11px 5px 11px;
+    color: #FFFFFF;
+    background-color: #A43E9E;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 20px 15px 0px 0px;
+}
+.sobre{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color);
+}
+.dSobre{
+    width: 95%;
+    justify-content: center;
+}
+.iconosSobre{
+    grid-row: 1 / 2;
+    width: 25px;
+    height: 25px;
+    margin: 0px 15px 0px 0px;
+}
+.grid{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+}
+.dImgTxt{
+    justify-content: center;
+    align-items: center;
+}
+.tSobre{
+    grid-row: 2 / 3;
+    text-align: center;
+    width:100%;
+    color: #666666;
+}
+hr{
+    margin: 0px 58px 0px 58px;
+}
+.tMovimientos {
+    margin: 0px;
+    font-size: 15px;
+}
+.dTextStat{
+    width: 95%;
+    justify-content: center;
+}
+.dStats{
+    justify-content: center;
+    margin-bottom:18px;
+}
+ul{
+    padding: 0px;
+    margin: 0;
+    list-style: none;
+}
+li{
+    font-weight: 700;
+    margin: 0px 0px 7px 0px;
+    color: var(--color);
+}
+.hrMeter{
+    margin: 0px 25px 0px 25px;
+}
+.dMeter{
+    margin: 0px 0px 7px 0px;
+    align-items: center;
+}
+.tMeter{
+    margin: 0px 20px 0px 0px;
+    font-weight: 400;
+}
+meter{
+    margin: 0px;
+    width: 333px;
+    height: 20px;
+}
+meter::-webkit-meter-bar {
+    border: none;
+    background: #EEE;
+} 
+ /*barra de progreso */
+meter::-webkit-meter-optimum-value {
+    background:var(--color);
+}
+
+@media (max-width: 750px){
+    .dRegresar{
+        align-items: center;
+        margin: 0px;
+    }
+    main{
+        background-image: linear-gradient(to bottom, transparent 25%, #FFFFFF 16%);
+    }
+    .titulo{
+        font-size: 30px;
+    }
+    .nPokemon{
+        font-size: 20px;
+    }
+    .imgPokemon{
+        width: 300px;
+        height: 300px;
+    }
+    .izq{
+        margin: 0px 10px 0px 0px;
+    }
+    .dere{
+        margin: 0px 0px 0px 10px;    
+    }
+    .iconPokeball{
+        width: 325px;
+        height: 325px;
+    }
+    .iconosSobre{
+        width: 18px;
+        height: 18px;
+        margin: 0px 15px 0px 0px;
+    }
+    .tSobre{
+        font-size: 14px;
+    }
+    hr{
+        margin: 0px 18px 0px 18px;
+    }
+    .descripcion{
+        text-align: justify;
+    }
+    meter{
+        width: 133px;
+    }
+}
+@media (max-width: 365px){
+    main{
+        background-image: linear-gradient(to bottom, transparent 17%, #FFFFFF 17%);
+    }
+    .titulo{
+        font-size: 25px;
+        margin: 0px;
+    }
+    .imgPokemon{
+        width: 230px;
+        height: 230px;
+    }
+    .izq{
+        margin: 0px 10px 0px 0px;
+    }
+    .dere{
+        margin: 0px 0px 0px 10px;    
+    }
+    .iconPokeball{
+        width: 230px;
+        height: 230px;
+    }
+    .tMovimientos{
+        font-size: 12px;
+    }
+    dMovimientos{
+        margin:0px;
+    }
+}

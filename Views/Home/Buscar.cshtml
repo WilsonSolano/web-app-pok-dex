@@ -1,0 +1,51 @@
+﻿@model Pokemon
+@{
+    ViewData["Title"] = "Buscar";
+}
+@section Estilos {
+    <link rel="stylesheet" href="~/css/styleIndex.css" asp-append-version="true">
+}
+<header class="flex">
+    <a href="@Url.Action("index","home")" class="flex dTitulo">
+        <img src="~/img/pokedexIcon.png" class="pokedexIcon">
+        <h1>Pokédex</h1>
+    </a>
+    <div class="dBuscar flex" for="buscar">
+        <form asp-controller="Home" asp-action="Buscar" class="formBuscar flex">
+            <img src="~/img/busqueda.png" alt="" class="iconBuscar" for="buscar">
+            <input type="search" name="IDoNombre" id="buscar" class="inputBuscar" placeholder="Search">
+            <input type="submit" class="btnEnviar" value="Buscar">
+        </form>
+    </div>
+    <div>
+        <input type="submit" value="#" class="ordenar">
+    </div>
+</header>
+<main class="flex" id="main">
+    @if(Model != null)
+    {
+        <a href="@Url.Action("DatosPokemon","Home", new {IDoNombre = Model.Id})" class="aCard">
+            <div class="cuerpo">
+                <p class="nPokemon">#@Model.Id</p>
+                <img src="@Model.Url" class="imgPokemon">
+                <p class="nombrePokemon">@Model.Name</p>
+            </div>
+        </a>
+    }
+    else
+    {
+        <div>
+            <h1 class="noEncontrado">Pokemon No Encontrado</h1>
+
+            <a href="@Url.Action("index","home")" class="flex dFlechaRegresar">
+                <img src="~/img/flecha-izquierda.png" class="flechaRegresar" />
+                <h2>Regresar</h2>
+            </a>
+        </div>
+    }
+
+</main>
+@section Scrips{
+    <script src="~/js/ScriptBusqueda.js"></script>
+}
+
