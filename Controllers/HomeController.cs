@@ -37,24 +37,6 @@ namespace pokedex_mvc.Controllers
             }
             return View(listaPokemon);
         }
-        public async Task<IActionResult> paginacion()
-        {
-            List<Pokemon> listaPokemon;
-
-            if (!_memoryCache.TryGetValue("ListaPokemon", out listaPokemon))
-            {
-                MemoryCacheEntryOptions cache = new MemoryCacheEntryOptions();
-                cache.AbsoluteExpiration = DateTime.Now.AddMinutes(10);
-                cache.Priority = CacheItemPriority.Normal;
-
-                List<Pokemon> lista = await _pokemonService.listar();
-
-                _memoryCache.Set("ListaPokemon", lista);
-
-                return View(lista);
-            }
-            return View(listaPokemon);
-        }
 
         public async Task<IActionResult> DatosPokemon(string IDoNombre)
         {
