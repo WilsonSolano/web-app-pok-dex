@@ -8,13 +8,13 @@ namespace pokedex_mvc.Servicios
 {
     public class PokemonService
     {
-        public async Task<List<Pokemon>> listar()
+        public async Task<List<Pokemon>> listar(string urlSiguiente = null)
         {
             List<Pokemon> lista = new List<Pokemon>();
 
             using (var cliente = new HttpClient())
             {
-                string url = "https://pokeapi.co/api/v2/pokemon/";
+                string url = urlSiguiente == null ? "https://pokeapi.co/api/v2/pokemon/" : urlSiguiente;
                 cliente.DefaultRequestHeaders.Clear();
 
                 var response = await cliente.GetAsync(url);
